@@ -1,0 +1,25 @@
+##CATEGORIES
+
+SELECT * FROM category
+
+##PRODUITS AVEC CATEGORIES
+
+SELECT product_id, product_name, product_description, product_price, product_reference, product_quantity, product_img, group_concat(cat_nom SEPARATOR ', ')
+FROM products
+NATURAL JOIN product_category
+NATURAL JOIN category
+GROUP BY product_id
+
+## REVIEWS
+
+SELECT *
+FROM reviews
+NATURAL JOIN users
+
+## COMMANDES 
+
+SELECT *
+FROM users
+NATURAL JOIN orders
+NATURAL JOIN order_product
+

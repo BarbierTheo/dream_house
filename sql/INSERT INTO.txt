@@ -1,0 +1,57 @@
+ajout user :
+
+INSERT INTO `users` (user_name, user_mail, user_tel, user_password, user_adresse) VALUES
+	("Théo", "théo.barbier@dream_house.com", "0668785363" , "hresjts5984", "49 rue de l'Eglise, 76600 Le Havre")
+	("Morgane", "morgane.lcvz@dream_house.com", "0666422763" , "rheqh556io56", "11 Rue Charles Alexandre Lesueur, 76310 Sainte-Adresse")
+	("Saïd", "said.fadli@laconcurrence.com", "0668592763" , "zjabfoean11", "29 Av. Pierre Mendès France, 76290 Montivilliers");
+
+
+ajout catégorie:
+
+INSERT INTO `category` (cat_nom) VALUES
+	("Salle à manger"),
+	("Salon"),
+	("Chambre"),
+	("Bureau"),
+	("Cuisine & Salle de bain");
+
+
+(( Je fais un site de meubles de luxe, j'aurai besoin pour une chaise en bois d'un nom (un peu hipster bobo), d'une description (moins de 300 caractères), d'un prix (un peu abusé), une fausse référence en integer, d'une quantité ))
+
+ajout produits: (1,2,6,7,8)
+
+INSERT INTO products (product_name, product_description, product_price, product_reference, product_quantity, product_img) VALUES
+	("Soki", "Son design épuré et sa finition soignée en font l'élément central de votre salon ou bureau. Pour une ambiance chic et intemporelle, laissez-vous séduire par son allure résolument moderne.",
+    "1450", "7583927", "15", "./img/dream_house_chair.jpg"),
+	("Sopa", "Son design géométrique et ses coussins profonds apportent une touche de sophistication moderne tout en offrant un confort inégalé. Parfait pour les intérieurs contemporains aux accents bohèmes.",
+    "3200", "8426710", "8", "./img/dream_house_couch.jpg"),
+	("Presioso", "Son architecture minimaliste et sa tête de lit capitonnée en font un refuge parfait pour des nuits raffinées et reposantes. Élégance intemporelle pour un sommeil d’exception.",
+    "2800", "9361842", "10", "./img/dream_house_bed.jpg"),
+	("Dinat", "Ce tabouret en bois sculpté aux lignes fluides et intemporelles ajoute une touche d’artisanat moderne à votre intérieur. Parfait pour un coin café ou comme siège d'appoint.",
+    "950", "7310465", "25", "./img/dream_house_stool.jpg"),
+	("Lamesa", "Cette table en marbre et acier brossé est le mariage parfait entre robustesse et raffinement. Ses lignes nettes et son plateau luxueux transforment chaque repas en une expérience hors du commun.",
+    "4500", "6123948", "5", "./img/dream_house_table.jpg");
+
+ajout avis :
+
+INSERT INTO reviews (review_description, review_note, review_date, user_id, product_id) VALUES
+	("Canapé incroyablement confortable franchement, le meilleur que j'ai eu", "5", NOW(), "1", "2")
+
+
+ajout produits aux catégories :
+
+INSERT INTO product_category (product_id, cat_id)
+VALUES 	("1","1"), ("1","2"), ("1", "4"),
+		("2","2"), ("6", "3"), ("7","1"),
+        ("7","3"), ("7","5"), ("8","1"), ("8", "5")
+
+
+ajout aux orders :
+
+INSERT INTO orders (order_date, user_id) VALUES
+(now(),"1"), (now(),"3")
+
+ajout order_products :
+
+INSERT INTO order_product (product_id, order_id, order_product_quantity) VALUES
+("2","1", "1"), ("6", "2", "1")
