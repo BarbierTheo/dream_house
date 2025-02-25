@@ -3,7 +3,12 @@ ajout user :
 INSERT INTO `users` (user_name, user_mail, user_tel, user_password, user_adresse) VALUES
 	("Théo", "théo.barbier@dream_house.com", "0668785363" , "hresjts5984", "49 rue de l'Eglise, 76600 Le Havre")
 	("Morgane", "morgane.lcvz@dream_house.com", "0666422763" , "rheqh556io56", "11 Rue Charles Alexandre Lesueur, 76310 Sainte-Adresse")
-	("Saïd", "said.fadli@laconcurrence.com", "0668592763" , "zjabfoean11", "29 Av. Pierre Mendès France, 76290 Montivilliers");
+	("Saïd", "said.fadli@laconcurrence.com", "0668592763" , "zjabfoean11", "29 Av. Pierre Mendès France, 76290 Montivilliers"),
+    ("Élodie", "elodie.durand@dream_house.com", "0675321890", "kd9xj48soh", "12 rue des Lilas, 75005 Paris"),
+    ("Marc", "marc.leroy@dream_house.com", "0678456231", "qkrfp2021hs", "22 avenue de la République, 13001 Marseille"),
+    ("Claire", "claire.martin@dream_house.com", "0612345678", "zvbwP9qg19", "45 rue des Fleurs, 59000 Lille"),
+    ("Lucas", "lucas.dubois@dream_house.com", "0698765432", "lpX7vqw098", "8 rue de la Paix, 75002 Paris"),
+    ("Isabelle", "isabelle.benoit@dream_house.com", "0687654321", "drfje21kjt", "18 Boulevard Victor Hugo, 44000 Nantes");
 
 
 ajout catégorie:
@@ -18,7 +23,7 @@ INSERT INTO `category` (cat_nom) VALUES
 
 (( Je fais un site de meubles de luxe, j'aurai besoin pour une chaise en bois d'un nom (un peu hipster bobo), d'une description (moins de 300 caractères), d'un prix (un peu abusé), une fausse référence en integer, d'une quantité ))
 
-ajout produits: (1,2,6,7,8)
+ajout produits: (1,2,6,7,8)(24,25,26,27,28)
 
 INSERT INTO products (product_name, product_description, product_price, product_reference, product_quantity, product_img) VALUES
 	("Soki", "Son design épuré et sa finition soignée en font l'élément central de votre salon ou bureau. Pour une ambiance chic et intemporelle, laissez-vous séduire par son allure résolument moderne.",
@@ -30,12 +35,26 @@ INSERT INTO products (product_name, product_description, product_price, product_
 	("Dinat", "Ce tabouret en bois sculpté aux lignes fluides et intemporelles ajoute une touche d’artisanat moderne à votre intérieur. Parfait pour un coin café ou comme siège d'appoint.",
     "950", "7310465", "25", "./img/dream_house_stool.jpg"),
 	("Lamesa", "Cette table en marbre et acier brossé est le mariage parfait entre robustesse et raffinement. Ses lignes nettes et son plateau luxueux transforment chaque repas en une expérience hors du commun.",
-    "4500", "6123948", "5", "./img/dream_house_table.jpg");
-
+    "4500", "6123948", "5", "./img/dream_house_table.jpg"),    ("Chiroq", "Lampe de bureau raffinée allie design épuré et lumière douce, créant une ambiance élégante et apaisante pour vos moments de travail ou de détente.", "350", "3125487", "20", "./img/dream_house_lamp.jpg"),
+   	 ("Balbal", "Ce canapé avec son dossier super haut et sa forme arrondie vous enveloppe dans un confort unique.", "2800", "4561873", "10", "./img/dream_house_couch2.jpg"),
+  	  ("Marmar", "Cette commode aux portes en marbre noir offre une touche sophistiquée et intemporelle à votre intérieur. Son design minimaliste en fait un choix parfait pour une chambre ou un salon.", "1750", "7864215", "8", "./img/dream_house_dresser.jpg"),
+  	  ("Manames", "Ce bain délicatement rosé invite à la détente avec son design épuré et ses lignes douces. Un luxe subtil pour une expérience de relaxation hors du temps, au confort ultime.", "1500", "8973246", "5", "./img/dream_house_bath.jpg"),
+   	 ("Jora", "Ce duo de tabourets originaux, aux formes asymétriques et aux matériaux contrastés, apportera une touche dynamique et moderne à votre espace, tout en offrant une assise confortable et élégante.", "1200", "6589132", "12", "./img/dream_house_stool.jpg");
+	
 ajout avis :
 
 INSERT INTO reviews (review_description, review_note, review_date, user_id, product_id) VALUES
-	("Canapé incroyablement confortable franchement, le meilleur que j'ai eu", "5", NOW(), "1", "2")
+	("Canapé incroyablement confortable franchement, le meilleur que j'ai eu", "5", NOW(), "1", "2"),
+   ("Cette lampe est parfaite pour mon bureau. L'éclairage est doux et élégant, elle transforme l'ambiance.", "5", NOW(), "1", "24"),
+    ("Le canapé est super confortable, on se sent comme dans un nuage. Le design est moderne et très beau.", "5", NOW(), "2", "25"),
+    ("La commode est magnifique, la finition en marbre noir est impeccable. Elle ajoute une touche chic à mon salon.", "5", NOW(), "3", "26"),
+    ("Je suis complètement séduit par ce bain. Son design est épuré et la couleur rosée est douce et apaisante.", "5", NOW(), "4", "27"),
+    ("Les tabourets sont originaux et super pratiques, je les ai mis dans ma cuisine et ils sont parfaits.", "4", NOW(), "5", "28"),
+    ("Le canapé est vraiment confortable, mais il est un peu plus ferme que ce que je pensais. Cela reste un excellent produit.", "4", NOW(), "6", "25"),
+    ("La lampe est un peu petite pour ce que je cherchais, mais elle reste jolie et pratique pour un bureau.", "3", NOW(), "7", "24"),
+    ("Le canapé a un très bon confort et un design moderne. Mais je pense qu'il pourrait être un peu plus moelleux.", "4", NOW(), "8", "25"),
+    ("La commode est superbe, mais je n'étais pas préparé à son poids. Très solide et de grande qualité, je recommande.", "4", NOW(), "1", "26"),
+    ("Ces tabourets sont à la fois élégants et pratiques. Je suis content de mon achat, mais un peu cher.", "4", NOW(), "2", "28");
 
 
 ajout produits aux catégories :
@@ -43,7 +62,11 @@ ajout produits aux catégories :
 INSERT INTO product_category (product_id, cat_id)
 VALUES 	("1","1"), ("1","2"), ("1", "4"),
 		("2","2"), ("6", "3"), ("7","1"),
-        ("7","3"), ("7","5"), ("8","1"), ("8", "5")
+        ("7","3"), ("7","5"), ("8","1"), ("8", "5"),	("24","3"), ("24","4"),
+    ("25","2"),
+    ("26","1"), ("26","2"),("26","3"),
+    ("27","5"),
+    ("28","3"), ("28","5")
 
 
 ajout aux orders :
